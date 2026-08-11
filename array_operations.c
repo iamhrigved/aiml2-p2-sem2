@@ -47,4 +47,44 @@ int main() {
         printf("\n");
     }
 
+    // MATRIX ADDITION
+    printf("Enter the dimensions of the matrices you want to add: ");
+    scanf("%d %d", &row, &col);
+    int matrix1[row][col], matrix2[row][col], res[row][col];
+    printf("Enter the elements of the first matrix: ");
+    for (int i = 0; i < row * col; i ++) {
+        int current_row = i / col, current_col = i % col;
+        scanf("%d", &matrix1[current_row][current_col]);
+    }
+    printf("Enter the elements of the second matrix: ");
+    for (int i = 0; i < row * col; i ++) {
+        int current_row = i / col, current_col = i % col;
+        scanf("%d", &matrix2[current_row][current_col]);
+    }
+    printf("Matrix 1:\n");
+    for (int i = 0; i < row; i++) {
+        for (int j = 0; j < col; j++) {
+            printf("%d ", matrix1[i][j]);
+        }
+        printf("\n");
+    }
+    printf("Matrix 2:\n");
+    for (int i = 0; i < row; i++) {
+        for (int j = 0; j < col; j++) {
+            printf("%d ", matrix2[i][j]);
+        }
+        printf("\n");
+    }
+    for (int i = 0; i < row; i++) {
+        for (int j = 0; j < col; j++) {
+            res[i][j] = matrix1[i][j] + matrix2[i][j];
+        }
+    }
+    printf("Result:\n");
+    for (int i = 0; i < row; i++) {
+        for (int j = 0; j < col; j++) {
+            printf("%d ", res[i][j]);
+        }
+        printf("\n");
+    }
 }
